@@ -1,6 +1,6 @@
 <?php
 
-class MySQLDB{_
+class MySQLDB{
 
 public $host;
 public $port;
@@ -24,12 +24,12 @@ public static function getInstance($config){
 //构造函数：禁止new
 private function __construct($config){
 	//初始化数据
-	$this->host = isset ($config['host'] ? $config['host'] : 'locahost');
-	$this->port = isset ($config['port'] ? $config['port'] : '3306');
-	$this->username = isset ($config['username'] ? $config['username'] : 'root');
-	$this->password = isset ($config['password'] ? $config['password'] : 'root');
-	$this->charset = isset ($config['charset'] ? $config['charset'] : 'utf8');
-	$this->dbname = isset ($config['dbname'] ? $config['dbname'] : '');
+	$this->host = isset ($config['host']) ? $config['host'] : 'locahost';
+	$this->port = isset ($config['port']) ? $config['port'] : '3306';
+	$this->username = isset ($config['username']) ? $config['username'] : 'root';
+	$this->password = isset ($config['password']) ? $config['password'] : 'root';
+	$this->charset = isset ($config['charset']) ? $config['charset'] : 'utf8';
+	$this->dbname = isset ($config['dbname']) ? $config['dbname'] : '';
 
 	//连接数据库
 	$this->connect();
@@ -46,7 +46,8 @@ private function __construct($config){
 
  //连接数据库
  public function connect(){
- 	$this->resourc=mysql_connect("$this->host","$this->port","$this->username","$this->possword");
+  // $this->resourc=mysql_connect($this->host,$this->port,$this->username,$this->password);
+ 	$this->resourc=mysql_connect("$this->host","$this->username", "$this->password");
  }
 
 //设置链接编码

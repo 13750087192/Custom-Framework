@@ -9,7 +9,7 @@ class Factory{
 	 *@return object
 	 */
 	public static function M($model_name){
-     static $model_name = array();//存储已经实例化好的模型对象的列表，下标模型名，值模型对象 
+     static $model_list = array();//存储已经实例化好的模型对象的列表，下标模型名，值模型对象 
 	
 	  //判断当前模型是否已经实例化
 	  if(!isset($model_list[$model_name])){
