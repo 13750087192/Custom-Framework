@@ -1,6 +1,6 @@
 <?php
 
-require'./Framework/Model.class.php';
+
 class MemberModel extends Model{
 
 	public function getlist(){

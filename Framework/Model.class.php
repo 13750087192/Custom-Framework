@@ -11,7 +11,7 @@ class Model{
     protected function _initDAO(){
     	//初始化MySQLDB
     	$config=array('host'=>'127.0.0.1','port'=>'3306','username'=>'root','password'=>'root','charset'=>'utf8','dbname'=>'millions_stores');
-		require_once'./Framework/MySQLDB.class.php';
+//		require_once'./Framework/MySQLDB.class.php';
 		$this->_dao = MySQLDB::getInstance($config);//Daobase Acccess Object 数据库操作对象
 
     }

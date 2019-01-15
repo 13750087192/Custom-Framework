@@ -2,7 +2,6 @@
 /**
  *控制器类
  */
-require'./Framework/Controller.class.php';
 class MemberController extends Controller{
 
 	/**
@@ -11,7 +10,7 @@ class MemberController extends Controller{
 	public function listAction(){
 	
 		//通过工厂获得对象
-		require'./Framework/Factory.class.php';
+//		require'./Framework/Factory.class.php';
 		$m_match = Factory::M('MemberModel');
 
 		$match_list = $m_match->getlist();
@@ -19,7 +18,7 @@ class MemberController extends Controller{
 		var_dump($match_list);die;
 
 		//载入负责显示的html文件
-		require'./Application/test/view/match_list_v.html';
+		require CURRENT_VIEW_PATH.'/match_list_v.html';
 	}
 	
 	/**

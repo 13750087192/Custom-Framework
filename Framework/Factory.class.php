@@ -14,7 +14,7 @@ class Factory{
 	  //判断当前模型是否已经实例化
 	  if(!isset($model_list[$model_name])){
          //没有实例化过
-         require'./Application/'.PLATFROM.'/model/'.$model_name.'.class.php';
+//         require'./Application/'.PLATFROM.'/model/'.$model_name.'.class.php';
          $model_list[$model_name] = new $model_name;//可变标志符，可变类
 	  }
 	  return $model_list[$model_name];
